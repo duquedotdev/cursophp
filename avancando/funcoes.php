@@ -1,12 +1,13 @@
 <?php
 
-function sacar ($conta, $valorDeSaque){
+function sacar (array $conta, float $valorDeSaque): array{
   if($valorDeSaque > $conta['saldo']){
     echo "Saldo insuficiente!" . PHP_EOL;
   } else {
     $conta['saldo'] -= $valorDeSaque;
     echo "Saque efetuado com sucesso! O novo saldo é de R$" . $conta['saldo'] . "." . PHP_EOL;
   }
+  return $conta;
 }
 
 function depositar ($conta, $valorDeDeposito){
